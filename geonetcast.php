@@ -76,7 +76,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #f5f5f5;
             margin: 0;
-            padding: 80px 0 60px; /* espacio para header y footer */
+            padding: 80px 0 60px; 
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -117,17 +117,17 @@
         .buttons-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 8px 40px; /* filas, columnas */
+            gap: 8px 40px;
             max-width: 900px;
             margin: 0 auto 28px auto;
         }
 
+        /* BOTONES – BASE */
         .geo-btn {
             display: block;
             width: 100%;
             text-align: center;
             padding: 8px 12px;
-            background-color: #003c94;
             color: #ffffff;
             border-radius: 0;
             font-size: 0.9rem;
@@ -135,38 +135,47 @@
             text-transform: uppercase;
             text-decoration: none;
             letter-spacing: 0.02em;
-            border: 1px solid #002c6c;
+            border: 1px solid transparent;
             box-shadow: 0 1px 2px rgba(0,0,0,0.2);
             transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
         }
 
-        .geo-btn:hover {
+        /* TONO AZUL OSCURO */
+        .geo-btn-dark {
+            background-color: #002060;
+            border-color: #002060;
+        }
+        .geo-btn-dark:hover {
             background-color: #002c6c;
-            transform: translateY(-1px);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* LINKS DE APOYO */
-        .links-apoyo-titulo {
-            text-align: center;
-            font-weight: 700;
-            color: #00246b;
-            margin-bottom: 8px;
+        /* TONO AZUL MEDIO */
+        .geo-btn-mid {
+            background-color: #002D86;
+            border-color: #002D86;
+        }
+        .geo-btn-mid:hover {
+            background-color: #395f99;
         }
 
-        .links-apoyo-lista {
-            text-align: left;
-            max-width: 900px;
-            margin: 0 auto;
-            font-size: 0.95rem;
+/* TONO BANDA AZUL */
+        .geo-btn-blue {
+            background-color: #003FBC;
+            border-color: #003FBC;
+        }
+.geo-btn-mid:hover {
+            background-color: #123c7aff;
         }
 
-        .links-apoyo-lista a {
-            display: block;
-            color: #003c94;
-            text-decoration: underline;
-            margin-bottom: 4px;
-            word-break: break-all;
+
+
+        /* TONO AZUL CLARO */
+        .geo-btn-light {
+            background-color: #9cb5f5;
+            border-color: #7b94c5;
+        }
+        .geo-btn-light:hover {
+            background-color: #7b94c5;
         }
 
         /* RESPONSIVE */
@@ -176,6 +185,8 @@
                 gap: 8px;
             }
         }
+        a{ color: inherit; text-decoration: none; }
+        a:hover{ text-decoration: underline; }
     </style>
 </head>
 <body class="bodya">
@@ -196,29 +207,66 @@
             El receptor de imágenes satelitales meteorológicas de la FAA integra la red de receptores del
             sistema <a href="https://www.geonetcastamericas.noaa.gov/" target="_blank" rel="noopener noreferrer">GeoNetCast Américas (OMM-NOAA)</a>,
             ha sido desarrollado en la V Brigada Aérea y actualmente es operado en la BAM Merlo
-            por Servicio de Meteorología del Esc&nbsp;|&nbsp;VYCA.
+            por Servicio de Meteorología del Esc I VYCA.
         </p>
 
         <!-- BOTONES EN DOS COLUMNAS -->
-        <section class="buttons-grid" aria-label="Productos satelitales">
-            <!-- Columna izquierda: Argentina -->
-            <a href="#" class="geo-btn">Argentina – Color Natural</a>
-            <a href="#" class="geo-btn">Antártida – Color Natural</a>
+        <section aria-label="Productos satelitales">
+     <!-- BOTONES EN TABLA (2 COLUMNAS, ALTURAS IGUALES, RESPONSIVE) -->
+<style>
+    /* Asegura que todos los botones tengan la misma altura en una fila */
+    .tabla-btn td {
+        vertical-align: top;
+    }
+    .tabla-btn a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 38px;  /* altura uniforme */
+        margin-bottom: 6px;
+    }
 
-            <a href="#" class="geo-btn">Argentina Infrarrojo – Topes Nubosos</a>
-            <a href="#" class="geo-btn">Antártida – Topes Nubosos</a>
+    /* En móvil: una sola columna */
+    @media(max-width: 768px){
+        .tabla-btn tr, .tabla-btn td {
+            display: block;
+            width: 100%;
+            padding: 0 !important;
+        }
+    }
+</style>
 
-            <a href="#" class="geo-btn">Argentina Infrarrojo Cercano</a>
-            <a href="#" class="geo-btn">Antártida Visible – Banda Azul</a>
+<table class="tabla-btn" style="width:100%; max-width:900px; margin:0 auto 28px auto; border-collapse:collapse;">
+    <tr>
+        <!-- COLUMNA IZQUIERDA -->
+        <td style="width:50%; padding-right:20px;">
 
-            <a href="#" class="geo-btn">Argentina Visible – Banda Rojo</a>
-            <a href="#" class="geo-btn">Argentina Rayos – Banda Rojo</a>
+            <a href="#" class="geo-btn geo-btn-dark">Argentina – Color Natural</a>
+            <a href="#" class="geo-btn geo-btn-dark">Argentina Infrarrojo – Topes Nubosos</a>
+            <a href="#" class="geo-btn geo-btn-dark">Argentina Infrarrojo Cercano</a>
 
-            <a href="#" class="geo-btn">Argentina Visible – Banda Azul</a>
-            <a href="#" class="geo-btn">Argentina – Fase de Agua en Nube (estimada)</a>
+            <a href="#" class="geo-btn geo-btn-mid">Argentina Visible – Banda Azul</a>
+            <a href="#" class="geo-btn geo-btn-mid">Argentina Visible – Banda Rojo</a>
+            <a href="#" class="geo-btn geo-btn-mid">Argentina Vapor de Agua – 750 a 500 hPa</a>
 
-            <a href="#" class="geo-btn">Argentina Vapor de Agua – 750 a 500 hPa</a>
-            <a href="#" class="geo-btn">Argentina – Altura de Topes (estimada)</a>
+        </td>
+
+        <!-- COLUMNA DERECHA -->
+        <td style="width:50%; padding-left:20px;">
+
+            <a href="#" class="geo-btn geo-btn-blue">Antártida – Color Natural</a>
+            <a href="#" class="geo-btn geo-btn-blue">Antártida – Topes Nubosos</a>
+            <a href="#" class="geo-btn geo-btn-blue">Antártida Visible – Banda Azul</a>
+
+            <a href="#" class="geo-btn geo-btn-light">Argentina Rayos</a>
+            <a href="#" class="geo-btn geo-btn-light">Argentina – Fase de Agua en Nube (estimada)</a>
+            <a href="#" class="geo-btn geo-btn-light">Argentina – Altura de Topes (estimada)</a>
+            <a href="#" class="geo-btn geo-btn-light">Sudamérica – Incendios</a>
+
+        </td>
+    </tr>
+</table>
+
         </section>
 
         <!-- Links de Apoyo -->
@@ -226,7 +274,7 @@
         <div class="links-apoyo-lista">
             <a href="https://www.geonetcastamericas.noaa.gov/" target="_blank" rel="noopener noreferrer">
                 https://www.geonetcastamericas.noaa.gov/
-            </a>
+            </a><br>
             <a href="https://geonetcast.wordpress.com/" target="_blank" rel="noopener noreferrer">
                 https://geonetcast.wordpress.com/
             </a>

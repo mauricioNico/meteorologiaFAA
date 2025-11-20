@@ -139,22 +139,41 @@
             background-color: #ff0000;
             border-color: #b00000;
         }
-        .btn-azul-oscuro {
-            background: linear-gradient(to right, #001d5a 20%, #00357d 100%);
-            border-color: #00133b;
-        }
-        .btn-azul {
-            background: linear-gradient(to right, #004fbc 20%, #0066ff 100%);
-            border-color: #003a87;
-        }
-        .btn-espacio {
-            background-color: #7ca5ff; /* azul claro */
-            border-color: #5c82d4;
-        }
-        .btn-apoyo {
-            background-color: #7ec6e4; /* celeste */
-            border-color: #5a9eb7;
-        }
+       /* COLORES – NUEVOS DEGRADÉS SUAVES */
+.btn-alerta {
+    background-color: #ff0000;
+    border-color: #b00000;
+}
+/* COLORES – DEGRADÉS AJUSTADOS CON BUEN CONTRASTE */
+.btn-alerta {
+    background-color: #ff0000;
+    border-color: #b00000;
+}
+
+/* Azul oscuro – Excelente contraste con blanco */
+.btn-azul-oscuro {
+    background: linear-gradient(to right, #00214e, #003a7a);
+    border-color: #001732;
+}
+
+/* Azul medio – Más saturado y profundo */
+.btn-azul {
+    background: linear-gradient(to right, #0057c2, #0074ff);
+    border-color: #00459b;
+}
+
+/* Espacio – Celeste más oscuro para buena lectura */
+.btn-espacio {
+    background: linear-gradient(to right, #4f8fd8, #77b5ff);
+    border-color: #3a6ea5;
+}
+
+/* Apoyo – Celeste grisado más profundo */
+.btn-apoyo {
+    background: linear-gradient(to right, #4aa6c8, #71c7e6);
+    border-color: #337d96;
+}
+
 
         /* Responsive */
         @media (max-width: 768px) {

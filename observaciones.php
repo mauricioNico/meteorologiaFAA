@@ -100,6 +100,8 @@
             margin: 0 auto 30px auto;
             font-size: 1rem;
             line-height: 1.55;
+            text-align: justify;
+            color: #444;
         }
 
         /* Botón grande */

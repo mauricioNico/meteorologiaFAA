@@ -174,7 +174,7 @@
         <div class="meno">
 
             <!-- PRIMER BOTÓN AMARILLO -->
-            <a href="https://imagenesmeteorologicas.faa.mil.ar/app/model/main.php" class="meno-item primero">Subir Mapas y Pronóstico</a>
+            <a href="https://imagenesmeteorologicas.faa.mil.ar/app/model/main.php" class="meno-item primero">Subir Información</a>
 
             <!-- BOTONES SIN ICONOS -->
             <a href="briefing.php" class="meno-item">Briefing Meteorológico</a>
